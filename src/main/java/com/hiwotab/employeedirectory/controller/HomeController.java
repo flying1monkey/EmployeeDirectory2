@@ -22,7 +22,10 @@ public class HomeController {
     public String showHomePage() {
         return "index";
     }
-
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
+    }
     @RequestMapping("/load")
     public @ResponseBody String LoadDB() {
         Department department = new Department();

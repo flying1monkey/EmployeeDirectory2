@@ -16,8 +16,9 @@ public class Employee {
     @NotEmpty
     @Size(min=10)
     private String phone;
-    @NotEmpty
 
+    @NotEmpty
+    @Size(min=2,max = 20)
     private String workno;
 
     @ManyToOne(fetch = FetchType.EAGER)
