@@ -14,7 +14,7 @@ public class Department {
     @Size(min=2,max = 50)
     private String depName;
 
-    private String depHName;
+    private long depHName;
 
     @OneToMany(mappedBy = "department",cascade= CascadeType.ALL,fetch=FetchType.EAGER)
     public Set<Employee> employees;
@@ -47,12 +47,13 @@ public class Department {
         this.employees = employees;
     }
 
-
-    public String getDepHName() {
+    public long getDepHName()
+    {
         return depHName;
     }
 
-    public void setDepHName(String depHName) {
+    public void setDepHName(long depHName)
+    {
         this.depHName = depHName;
     }
 

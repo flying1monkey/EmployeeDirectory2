@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 
-    < <meta charset="utf-8">
+    <meta charset="utf-8">
     <title>Bell Bootstrap 4 Theme</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -60,6 +60,7 @@
                     <td th:text="${emp.lname}" ></td>
                     <td th:text="${emp.phone}"></td>
                     <td th:text="${emp.workno}"></td>
+
                     <td>
                         <a th:href="@{/Empupdate/{id}(id=${emp.id})}">Update</a>
                         <a th:href="@{/Empdetail/{id}(id=${emp.id})}">Details</a>

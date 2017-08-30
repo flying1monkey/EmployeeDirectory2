@@ -37,6 +37,7 @@
     <link href="../../css/style.css" rel="stylesheet">
 </head>
 <body>
+<th:block th:replace="base :: myNavBar"></th:block>
 
 <section class="hero">
     <div class="container text-center">
@@ -54,7 +55,8 @@
 
                 <div class="col-sm-10">
 
-                    <p th:if="${newDep.depHName}!=null" th:text="${newDep.depHName}" />
+                    <!--<p th:if="${newDep.depHName}!=null" th:text="${newDep.depHName}" />-->
+                    <p th:if="${emp}!=null" th:text="${emp.fname}" />
                 </div>
             </div>
 

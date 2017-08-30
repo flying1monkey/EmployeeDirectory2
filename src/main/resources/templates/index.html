@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>Bell Bootstrap 4 Theme</title>
@@ -47,6 +47,8 @@
 <body>
 <!-- Page Content
 ================================================== -->
+<th:block th:replace="base :: myNavBar"></th:block>
+
 <!-- Hero -->
 
 <section class="hero">

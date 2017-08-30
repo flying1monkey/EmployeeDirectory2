@@ -45,6 +45,8 @@
 </head>
 
 <body>
+<th:block th:replace="base :: myNavBar"></th:block>
+
 <section class="hero">
     <div class="container text-center">
         <div class="container">
@@ -57,6 +59,7 @@
                             <!-- Form Name -->
                             <legend align="Center">Please Enter Employees Information</legend>
                             <input type=hidden th:field="*{department.id}" />
+                            <input type=hidden th:field="*{id}" />
 
                             <!-- Text input-->
                             <div class="form-group">

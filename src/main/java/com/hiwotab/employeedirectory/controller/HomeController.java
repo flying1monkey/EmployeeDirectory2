@@ -58,9 +58,9 @@ public class HomeController {
         }
 
         Department department=departmentRepo.findOne(employee.getDepartment().getId());
-        if(department.getDepHName()==null) {
+        if(department.getDepHName()==0) {
             employeeRepo.save(employee);
-            department.setDepHName(employee.getFname() + ' ' + employee.getLname());
+            department.setDepHName(employee.getId());
             departmentRepo.save(department);
         }
         else
@@ -78,11 +78,13 @@ public class HomeController {
     }
 
     @PostMapping("/addDepartment")
-    public String addDepartemntInfo(@Valid @ModelAttribute("newDep") Department department,BindingResult result) {
+    public String addDepartemntInfo(@Valid @ModelAttribute("newDep") Department department, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "addDepartment";
         }
         departmentRepo.save(department);
+
+        model.addAttribute("emp", employeeRepo.findOne(department.getId()));
         return "dispDepInfo";
     }
 
