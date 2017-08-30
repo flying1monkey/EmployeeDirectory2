@@ -57,13 +57,16 @@
                 <tbody align="left">
                 <tr th:each="dep : ${department}">
                     <td th:text="${dep.depName}" ></td>
-                    <td th:text="${dep.depHName}" ></td>
 
+                    <span th:each="emp : ${dep.employees}" >
+                        <td th:if="${emp.id}==${dep.depHName}" th:text="${emp.fname}"/>
+                    </span>
                     <td>
-                        <a th:href="@{/Depupdate/{id}(id=${dep.id})}">Update</a>
+                    <a th:href="@{/Depupdate/{id}(id=${dep.id})}">Update</a>
                         <a th:href="@{/Depdetail/{id}(id=${dep.id})}">Details</a>
                         <!--<a th:href="@{/delete/{id}(id=${dir.id})}">Delete</a>-->
                     </td>
+                    </tr>
                 </tbody>
             </table>
         </form>

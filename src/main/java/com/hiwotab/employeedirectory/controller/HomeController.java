@@ -109,6 +109,7 @@ public class HomeController {
     @RequestMapping("/listDep")
     public String listAllDep(Model model) {
         model.addAttribute("department", departmentRepo.findAll());
+
         return "listDep";
     }
 
